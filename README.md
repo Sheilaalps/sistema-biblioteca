@@ -1,4 +1,4 @@
- "#  Sistema de Gerenciamento de Biblioteca (LibManager)
+ #  Sistema de Gerenciamento de Biblioteca (LibManager)
 Este é um sistema desenvolvido em Java para gerenciar o cadastro de livros, usuários e a realização de empréstimos.
 ##  Funcionalidades
 * **Cadastro de Livros:** Título, autor e ISBN.
