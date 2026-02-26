@@ -13,7 +13,7 @@ Este é um sistema desenvolvido em Java para gerenciar o cadastro de livros, usu
 2. Execute o programa:
    \`java app.App\`
    
-##Exemplo de Uso
+##  Exemplo de Uso
 Ao iniciar o programa, utilize o menu numérico:
 Digite 1 para cadastrar o livro.
 Digite 2 para cadastrar o usuário.
