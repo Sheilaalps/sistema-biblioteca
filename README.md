@@ -12,9 +12,10 @@ Este é um sistema desenvolvido em Java para gerenciar o cadastro de livros, usu
    \`javac sistema_biblioteca/*.java app/App.java\`
 2. Execute o programa:
    \`java app.App\`
+   
 ##Exemplo de Uso
 Ao iniciar o programa, utilize o menu numérico:
 Digite 1 para cadastrar o livro.
 Digite 2 para cadastrar o usuário.
 Digite 3 para realizar o empréstimo informando o nome do usuário e o título do livro exatamente como cadastrados.
-Digite 4 para sair do sistema." > README.md
+Digite 4 para sair do sistema." 
