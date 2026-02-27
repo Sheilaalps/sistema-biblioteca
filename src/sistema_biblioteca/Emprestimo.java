@@ -12,8 +12,10 @@ public class Emprestimo {
     public Emprestimo(Livro livro, Usuario usuario) {
         this.usuario = usuario;
         this.livro = livro;
-        this.dataEmprestimo = LocalDate.now(); // Define a data no momento da criação
+        this.dataEmprestimo = LocalDate.now();// Define a data no momento da criação
+        this.devolucao=false;
     }
+    
     
     //metodo para controlar a entrega
     public boolean isDevolucao() {
@@ -27,6 +29,10 @@ public class Emprestimo {
         return "Livro: " + livro.getTitulo() + 
                " | Usuário: " + usuario.getNome() + 
                " | Data: " + dataEmprestimo.format(formato);
+    }
+    
+    public void registrarDevolucao() {
+        this.devolucao = true;
     }
 
     // Getters e Setters
