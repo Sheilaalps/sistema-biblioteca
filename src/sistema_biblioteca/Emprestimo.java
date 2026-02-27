@@ -7,11 +7,17 @@ public class Emprestimo {
     private Usuario usuario;
     private Livro livro;
     private LocalDate dataEmprestimo; // Adicionado para controle real
+    private boolean devolucao=false; 
 
     public Emprestimo(Livro livro, Usuario usuario) {
         this.usuario = usuario;
         this.livro = livro;
         this.dataEmprestimo = LocalDate.now(); // Define a data no momento da criação
+    }
+    
+    //metodo para controlar a entrega
+    public boolean isDevolucao() {
+    	return devolucao;
     }
 
     // Método para facilitar a exibição na tela

@@ -18,11 +18,25 @@ public class App {
         System.out.println("\n--- MENU BIBLIOTECA ---");
         System.out.println("1. Cadastrar livro");
         System.out.println("2. Cadastrar usuário");
-        System.out.println("3. Registrar empréstimo");
-        System.out.println("4. Sair");
+        System.out.println("5. Registrar empréstimo");
+        System.out.println("6. Sair");
         System.out.print("Escolha uma opção: ");
+        System.out.println("3. Listar livros");
+        System.out.println("4. Listar usuários");
+        
+        int opcao = scanner.nextInt();
+        scanner.nextLine(); // Limpa o buffer do teclado
+        
+        switch(opcao) {
+        case 1: cadastrarLivro();
+        case 2: cadastrarUsuario();
+        case 3: listarLivros();   // Chama o método acima
+        case 4: listarUsuario(); // Chama o método acima
+        case 5: registrarEmprestimo();
+        break;
+        case 6: System.exit(0);
     }
-
+    }
     public static void main(String[] args) {
         while (true) {
             mostrarMenu();
@@ -50,28 +64,40 @@ public class App {
         System.out.print("Digite o autor: ");
         String autor = scanner.nextLine();
         System.out.print("Digite o ISBN: ");
-        int isbn = scanner.nextInt();
-        scanner.nextLine();
-
+        String isbn = scanner.nextLine();
+      
         livros.add(new Livro(titulo, autor, isbn));
         System.out.println("Livro cadastrado com sucesso!");
+    }
+    private static void listarUsuario() {
+    	System.out.println("\n---LISTA DE USUÁRIOS---");
+    	for(Usuario u: usuarios){
+    		System.out.println("Nome: "+u.getNome() + "| CPF: " +u.getCpf());
+    	}
+    }
+    private static void listarLivros() {
+    	System.out.println("\n---LISTA DE LIVROS---");
+    	for(Livro l: livros){
+    		System.out.println("Titulo: "+l.getTitulo() + "| ISBN: " +l.getIsbn()+ "|Autor: "+l.getAutor());
+    	}
     }
 
     private static void cadastrarUsuario() {
         System.out.print("Digite o nome do usuário: ");
         String nome = scanner.nextLine();
         System.out.print("Digite o CPF do usuário: ");
-        int cpf = scanner.nextInt();
+        String cpf = scanner.nextLine();
         System.out.print("Digite o telefone do usuário: ");
-        int telefone = scanner.nextInt();
-        scanner.nextLine();
-
+        String telefone = scanner.nextLine();
+        
         usuarios.add(new Usuario(nome, cpf, telefone));
         System.out.println("Usuário cadastrado com sucesso!");
     }
 
     private static void registrarEmprestimo() {
         if (usuarios.isEmpty() || livros.isEmpty()) {
+        	
+        	
             System.out.println("Erro: É necessário ter pelo menos um usuário e um livro cadastrados.");
             return;
         }
