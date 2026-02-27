@@ -103,8 +103,9 @@ public class App {
 	public static void main(String[] args) {
 		while (true) {
 			mostrarMenu();
+		}
 	}
-	}
+
 	private static void cadastrarLivro() {
 		System.out.print("Digite o título: ");
 		String titulo = scanner.nextLine();
@@ -157,7 +158,7 @@ public class App {
 		// Busca Usuário
 		Usuario usuarioEncontrado = null;
 		for (Usuario u : usuarios) {
-			if (u.getNome().equalsIgnoreCase(nomeBusca)) {
+			if (u.getNome().trim ().equalsIgnoreCase(nomeBusca.trim())){
 				usuarioEncontrado = u;
 				break;
 			}
@@ -174,7 +175,7 @@ public class App {
 		// Busca Livro
 		Livro livroEncontrado = null;
 		for (Livro l : livros) {
-			if (l.getTitulo().equalsIgnoreCase(tituloBusca)) {
+			if (l.getTitulo().trim().equalsIgnoreCase(tituloBusca.trim())) {
 				livroEncontrado = l;
 				break;
 			}
